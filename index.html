@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXO-FINDER AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h2 class="logo">EXO-FINDER AI</h2>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Exploring the Universe</h1>
+      <p>Harnessing artificial intelligence to uncover new worlds among the stars.</p>
+      <a href="#predict-section" class="scroll-btn">Begin Exploration ↓</a>
+    </div>
+  </section>
+
+  <!-- PREDICTION -->
+  <section id="predict-section" class="nasa-section">
+    <h2 class="section-title">Exoplanet Prediction Panel</h2>
+
+    <div class="nasa-content glass-panel">
+      <p class="section-description">
+        Choose how you want to explore: manually input planet parameters or upload a CSV file for batch analysis.
+      </p>
+
+      <!-- Mode 1: Manual Input -->
+      <h3>🪐 Manual Input</h3>
+      <form id="manual-form" class="prediction-form">
+        <input type="number" step="any" id="orbital_period" placeholder="Orbital Period (days)" required>
+        <input type="number" step="any" id="transit_depth" placeholder="Transit Depth (%)" required>
+        <input type="number" step="any" id="planet_radius" placeholder="Planet Radius (Earth radii)" required>
+        <input type="number" step="any" id="stellar_radius" placeholder="Stellar Radius (Solar radii)" required>
+        <input type="number" step="any" id="equilibrium_temp" placeholder="Equilibrium Temperature (K)" value="250">
+        <input type="number" step="any" id="stellar_temp" placeholder="Stellar Temperature (K)" value="5700">
+        <button type="button" id="predict_json_btn">🔮 Predict (Manual)</button>
+      </form>
+
+      <hr style="margin: 20px 0; border-color: rgba(255,255,255,0.2);">
+
+      <!-- Mode 2: Upload CSV -->
+      <h3>📁 Upload CSV File</h3>
+      <div class="csv-upload">
+        <input type="file" id="csv_file" accept=".csv" />
+        <button type="button" id="predict_csv_btn">🚀 Predict from CSV</button>
+      </div>
+
+      <!-- Prediction Result -->
+      <div id="result" class="prediction-result glass-panel">
+        Awaiting input...
+      </div>
+
+      <!-- Planet Loading Animation -->
+      <div id="planet-loader" class="planet-loader">
+        <div class="planet"></div>
+        <div class="orbit"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About Exo-Finder AI</h2>
+    <p>
+      Exo-Finder AI integrates cutting-edge astronomy with deep learning to classify and detect exoplanets across missions like <strong>Kepler</strong>, <strong>K2</strong>, and <strong>TESS</strong>.  
+      Our goal: automate planetary discovery through machine intelligence.
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

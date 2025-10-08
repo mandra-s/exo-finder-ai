@@ -1,0 +1,232 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BODY === */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: radial-gradient(circle at top, #030b1a, #000);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* === HEADER === */
+header {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #4da6ff;
+}
+
+/* === HERO === */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("assets/backgroundweb.png") no-repeat center center/cover;
+  backdrop-filter: blur(4px);
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+  animation: fadeIn 1.8s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 0 0 25px #00bfff;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.scroll-btn {
+  padding: 12px 25px;
+  background: rgba(77,166,255,0.2);
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* === NASA SECTION === */
+.nasa-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px;
+  text-align: center;
+  background: #000;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  color: #4da6ff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px #0077ff;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 0 25px rgba(77, 166, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* === FORM PREDIKSI === */
+.prediction-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.prediction-form input {
+  width: 80%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.prediction-form input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.prediction-form button {
+  margin-top: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #4da6ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.prediction-form button:hover {
+  background: #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.prediction-result {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #4da6ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #4da6ff;
+}
+
+/* === PLANET LOADING ANIMATION === */
+.planet-loader {
+  display: none; /* awalnya disembunyikan */
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 30px auto;
+}
+
+.orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(77,166,255,0.5);
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle at 30% 30%, #00bfff, #0044aa);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00bfff;
+  transform-origin: -40px 50%;
+  animation: orbit 4s linear infinite;
+}
+
+/* === ABOUT === */
+.about {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #4da6ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #0077ff;
+}
+
+.about p {
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+/* === ANIMASI === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
